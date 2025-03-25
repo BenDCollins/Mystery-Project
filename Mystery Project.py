@@ -1,3 +1,4 @@
+import time
 num_attempts = 1
 name_stored = input("Enter your first and last name: ")
 name_stripped = name_stored.strip()
@@ -6,14 +7,16 @@ spaces_between = name_stripped.count(" ")
 
 
 if (name_stored.find(" ") == -1):
-    print("You have only entered one name.")
+    print("\nYou have only entered one name.")
     print("Restart the program and if you don't have a last name just pretend you do, silly billy.")
+    time.sleep(3)
     counter = 1
     while (counter < 2):
         print("Somebody can't follow instructions ;) ",end="")
 elif (spaces_between > 1):
-    print("You have entered too many names.")
-    print("Restart the program and only enter your first and last name, silly billy.")
+    print("\nYou have entered too many names or too many spaces.")
+    print("Restart the program and only enter your first and last name with one space between, silly billy.")
+    time.sleep(3)
     counter = 1
     while (counter < 2):
         print("Somebody can't follow instructions ;) ",end="")
@@ -32,8 +35,9 @@ def another_attempt(attempt_counter):
         global num_attempts
         global name
         if (attempt_counter == 1):
-            print("Clearly you either did not read the prompt or chose to ignore it. Either way, how rude!")
+            print("\nClearly you either did not read the prompt or chose to ignore it. Either way, how rude!")
             print("In fact, if you are going to be so rude, I shall not continue to converse with you, good day.")
+            time.sleep(5)
             counter = 1
             while (counter < 150):
                 print("\t", end="")
@@ -223,5 +227,3 @@ while (num_attempts <= 4):
             another_attempt(num_attempts)
     else:
             another_attempt(num_attempts)
-    
-      
